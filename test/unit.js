@@ -1,11 +1,6 @@
 // @ts-check
-const { resolve } = require('../')
+const { resolve } = require('../src')
 const test = require('tape')
-
-// test cases
-//   * relative path
-//   * absolute path
-//   * current path + relative path
 
 test('relative path from "/"', t => {
     const resolved = resolve('/', 'foo/bar')

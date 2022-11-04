@@ -40,7 +40,6 @@ CatchLinks.resolve = resolve
  * @param {string} to
  */
 function resolve (from, to) {
-
     const fromArr = from.split('/')
         .map(path => path.replaceAll('/', ''))
         .filter(Boolean)

@@ -1,5 +1,6 @@
+// @ts-check
 const test = require('tape')
-const catchLinks = require('../')
+const catchLinks = require('../src')
 const dom = require('@socketsupply/test-dom')
 
 test('click a link', t => {
@@ -9,5 +10,6 @@ test('click a link', t => {
         t.end()
     })
 
+    // @ts-ignore
     dom.click(document.getElementById('local-link'))
 })

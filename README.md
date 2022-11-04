@@ -1,6 +1,6 @@
 # catch links
 
-Like the classic @substack module, but updated.
+Like the classic [@substack module](https://www.npmjs.com/package/catch-links), but updated.
 
 ## features
 * zero dependencies

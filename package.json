@@ -9,6 +9,10 @@
     ".": {
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js"
+    },
+    "./dist": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {

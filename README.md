@@ -43,3 +43,15 @@ catchLinks(document.body, function onLinkClick (href) {
     // => '/foo'
 })
 ```
+
+## test
+We are using `tape-run` and `inline-htmlify` to run tests in a browser
+environment.
+
+See `package.json`:
+```js
+ "scripts": {
+    "test-browser": "browserify test/index.js | htmlify test/index.html | tape-run --input=html | tap-arc"
+  }
+```
+

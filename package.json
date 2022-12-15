@@ -17,8 +17,9 @@
   },
   "scripts": {
     "build": "node ./build.js",
-    "test": "npm run build && npm run test-unit && npm run test-browser",
     "postversion": "git push && git push --tags && npm publish",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && npm run test-unit && npm run test-browser",
     "test-unit": "tape test/unit.js | tap-arc",
     "test-browser": "browserify test/index.js | htmlify test/index.html | tape-run --input=html | tap-arc"
   },

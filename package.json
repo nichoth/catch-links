@@ -1,6 +1,5 @@
 {
   "name": "@nichoth/catch-links",
-  "type": "module",
   "version": "0.0.7",
   "main": "src/index.js",
   "directories": {

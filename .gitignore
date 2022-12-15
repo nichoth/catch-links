@@ -1,3 +1,4 @@
 node_modules/
 package-lock.json
-dist/index.esm.js dist/index.js
+dist/*
+

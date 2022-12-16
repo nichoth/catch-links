@@ -8,21 +8,21 @@ const esbuild = require('esbuild')
 async function main () {
     // cjs
     await esbuild.build({
-        entryPoints: ['src/index.js'],
+        entryPoints: ['src/index.cjs'],
         bundle: true,
         keepNames: true,
         format: 'cjs',
-        outfile: path.join('./dist/', 'index.js'),
+        outfile: path.join('./dist/', 'index.cjs'),
         platform: 'browser'
     })
 
     // esm
     await esbuild.build({
-        entryPoints: ['src/index.js'],
+        entryPoints: ['src/index.cjs'],
         bundle: true,
         keepNames: true,
         format: 'esm',
-        outfile: path.join('./dist/', 'index.esm.js'),
+        outfile: path.join('./dist/', 'index.mjs'),
         platform: 'browser'
     })
 }

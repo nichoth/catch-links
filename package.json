@@ -8,8 +8,8 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./dist": {
       "import": "./dist/index.esm.js",
@@ -17,10 +17,12 @@
     }
   },
   "scripts": {
-    "build": "node ./build.js",
+    "build": "rm ./dist/* && node ./build.cjs",
     "postversion": "git push && git push --tags && npm publish",
     "prepublishOnly": "npm run build",
-    "test": "npm run build && npm run test-unit && npm run test-browser",
+    "test": "npm run build && npm run test-unit && npm run test-browser && npm run test-esm-unit && npm run test-esm-browser",
+    "test-esm-unit": "node ./test/esm-unit.mjs | tap-arc",
+    "test-esm-browser": "esbuild --bundle --keep-names test/index.mjs | htmlify test/index.html | tape-run --input=html | tap-arc",
     "test-unit": "tape test/unit.cjs | tap-arc",
     "test-browser": "browserify test/index.cjs | htmlify test/index.html | tape-run --input=html | tap-arc"
   },
@@ -46,6 +48,7 @@
     "inline-htmlify": "^2.0.1",
     "tap-arc": "^0.3.5",
     "tape": "^5.6.1",
-    "tape-run": "^10.0.0"
+    "tape-run": "^10.0.0",
+    "tapzero": "^0.6.1"
   }
 }

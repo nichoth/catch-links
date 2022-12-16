@@ -1,6 +1,6 @@
 // @ts-check
 const test = require('tape')
-const catchLinks = require('../src')
+const catchLinks = require('../src/index.cjs')
 const dom = require('@socketsupply/test-dom')
 
 test('click a link', t => {

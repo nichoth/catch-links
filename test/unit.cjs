@@ -1,5 +1,5 @@
 // @ts-check
-const { resolve } = require('../src')
+const { resolve } = require('../src/index.cjs')
 const test = require('tape')
 
 test('relative path from "/"', t => {

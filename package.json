@@ -1,5 +1,6 @@
 {
   "name": "@nichoth/catch-links",
+  "type": "module",
   "version": "0.0.9",
   "main": "src/index.js",
   "directories": {
@@ -20,7 +21,7 @@
     "postversion": "git push && git push --tags && npm publish",
     "prepublishOnly": "npm run build",
     "test": "npm run build && npm run test-unit && npm run test-browser",
-    "test-unit": "tape test/unit.js | tap-arc",
+    "test-unit": "tape test/unit.cjs | tap-arc",
     "test-browser": "browserify test/index.js | htmlify test/index.html | tape-run --input=html | tap-arc"
   },
   "repository": {

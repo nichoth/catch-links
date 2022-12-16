@@ -20,8 +20,9 @@
     "build": "rm ./dist/* && node ./build.cjs",
     "postversion": "git push && git push --tags && npm publish",
     "prepublishOnly": "npm run build",
-    "test": "npm run build && npm run test-unit && npm run test-browser",
+    "test": "npm run build && npm run test-unit && npm run test-browser && npm run test-esm-unit && npm run test-esm-browser",
     "test-esm-unit": "node ./test/esm-unit.mjs | tap-arc",
+    "test-esm-browser": "esbuild --bundle --keep-names test/index.mjs | htmlify test/index.html | tape-run --input=html | tap-arc",
     "test-unit": "tape test/unit.cjs | tap-arc",
     "test-browser": "browserify test/index.cjs | htmlify test/index.html | tape-run --input=html | tap-arc"
   },

@@ -21,7 +21,7 @@ const catchLinks = require('@nichoth/catch-links')
 
 ### ESM
 ```js
-import catchLinks from '@nichoth/catch-links'
+import CatchLinks from '@nichoth/catch-links'
 ```
 
 ## example
@@ -35,7 +35,7 @@ Given this HTML
 
 Use this JS
 ```js
-const catchLinks = require('@nichoth/catch-links')
+import CatchLinks from '@nichoth/catch-links'
 
 // given a click on `#local-link`
 catchLinks(document.body, function onLinkClick (href) {
